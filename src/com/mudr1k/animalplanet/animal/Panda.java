@@ -1,17 +1,9 @@
 package com.mudr1k.animalplanet.animal;
 
-import com.mudr1k.animalplanet.Edible;
-import com.mudr1k.animalplanet.Plant;
+import com.mudr1k.animalplanet.AbstractHerbivore;
+import com.mudr1k.animalplanet.Animal;
+import com.mudr1k.animalplanet.Flesh;
 
-public class Panda extends AbstractBear {
+public class Panda implements Animal, Flesh, AbstractHerbivore {
 
-    @Override
-    public void eat(Edible food) {
-        try {
-            Plant plant = (Plant) food;
-            System.out.println(getClass().getSimpleName() + " eat " + plant.getClass().getSimpleName());
-        } catch (ClassCastException e) {
-            System.out.println("Panda doesn't eat " + food.getClass().getSimpleName() + " flesh");
-        }
-    }
 }

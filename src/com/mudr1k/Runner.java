@@ -11,18 +11,20 @@ public class Runner {
         Goat goat = new Goat();
         Cow cow = new Cow();
         Grass grass = new Grass();
-
-        AbstractBear abstractBear = new AbstractBear();
-        AbstractBear panda = new Panda();
-        AbstractBear whiteBear = new WhiteBear();
-
+        BrownBear brownBear = new BrownBear();
+        Panda panda = new Panda();
+        WhiteBear whiteBear = new WhiteBear();
         Rat rat = new Rat();
 
-//        lion.eat(lion);
+        try {
+            lion.eat(lion);
+        } catch (InvalidParameterException e) {
+            System.err.println(e.getMessage());
+        }
         lion.eat(goat);
         lion.eat(cow);
 //        lion.eat(grass);
-        lion.eat(abstractBear);
+        lion.eat(brownBear);
         lion.eat(panda);
         lion.eat(whiteBear);
         lion.eat(rat);
@@ -38,35 +40,33 @@ public class Runner {
 
         cow.eat(grass);
 
-        abstractBear.eat(lion);
-        abstractBear.eat(goat);
-        abstractBear.eat(cow);
-        abstractBear.eat(grass);
+        brownBear.eat(lion);
+        brownBear.eat(goat);
+        brownBear.eat(cow);
+        brownBear.eat(grass);
         try {
-            abstractBear.eat(abstractBear);
+            brownBear.eat(brownBear);
         } catch (InvalidParameterException e) {
             System.err.println(e.getMessage());
         }
+        brownBear.eat(panda);
+        brownBear.eat(whiteBear);
+        brownBear.eat(rat);
 
-
-        abstractBear.eat(panda);
-        abstractBear.eat(whiteBear);
-        abstractBear.eat(rat);
-
-        panda.eat(lion);
-        panda.eat(goat);
-        panda.eat(cow);
+//        panda.eat(lion);
+//        panda.eat(goat);
+//        panda.eat(cow);
         panda.eat(grass);
-        panda.eat(abstractBear);
-        panda.eat(panda);
-        panda.eat(whiteBear);
-        panda.eat(rat);
+//        panda.eat(abstractBear);
+//        panda.eat(panda);
+//        panda.eat(whiteBear);
+//        panda.eat(rat);
 
         whiteBear.eat(lion);
         whiteBear.eat(goat);
         whiteBear.eat(cow);
-        whiteBear.eat(grass);
-        whiteBear.eat(abstractBear);
+//        whiteBear.eat(grass);
+        whiteBear.eat(brownBear);
         whiteBear.eat(panda);
         try {
             whiteBear.eat(whiteBear);
@@ -79,7 +79,7 @@ public class Runner {
         rat.eat(goat);
         rat.eat(cow);
         rat.eat(grass);
-        rat.eat(abstractBear);
+        rat.eat(brownBear);
         rat.eat(panda);
         rat.eat(whiteBear);
         try {

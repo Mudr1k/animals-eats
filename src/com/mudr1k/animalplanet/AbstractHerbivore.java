@@ -1,7 +1,7 @@
 package com.mudr1k.animalplanet;
 
-public abstract class AbstractHerbivore implements Animal {
-    public void eat(Plant food) {
+public interface AbstractHerbivore extends Animal {
+    default void eat(Plant food) {
         System.out.println(getClass().getSimpleName() + " eat " + food.getClass().getSimpleName());
     }
 }
